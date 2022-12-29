@@ -1,10 +1,6 @@
 Fake CSV Generator
 Check it out -> Let`s try!
 
-admin
-
-1qazcde3
-
 Features
 Any user can log in to the system with a username and password.
 Any logged-in user can create any number of data schemas to create datasets with fake data.
@@ -25,5 +21,6 @@ venv/scripts/activate
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
+python manage.py createsuperuser #create user for tests
 python manage.py runserver  # starts Django project
 ![img.png](img.png)
