@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}
+  <title>Schema list</title>
+{% endblock %} {% block content %}
+
+  <h1>
+    Data schemas
+
+    <a class="btn btn-success link-to-page" href="{% url "fakedata:schema-create" %}">
+      Create Schema
+      <i class="fas fa-plus"></i>
+    </a>
+  </h1>
+  {% if fakeschema_list %}
+    <table class="table table-strip table-bordered text-center bg-white">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Modified</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      {% for fakeschema in fakeschema_list %}
+        <tbody>
+        <tr class="text-dark">
+          <td>{{ forloop.counter }}</td>
+          <td>
+            <a class="btn btn-link"
+               href="{% url "fakedata:schema-detail" pk=fakeschema.id %}"> {{ fakeschema.title }}</a>
+          </td>
+          <td>
+            {% if fakeschema.updated %} {{ fakeschema.updated }} {% else %} {{ fakeschema.created }} {% endif %}
+          </td>
+          <td>
+            <a class="btn btn-success" href="{% url 'fakedata:schema-edit' pk=fakeschema.id %}">update<i
+                class="btn-success"></i></a>
+            <a class="btn btn-danger link-to-page" data-mdb-toggle="modal" data-mdb-target="#delete{{ fakeschema.id }}">
+              delete <i class="fas fa-trash-alt"></i></a>
+            {% include "fakedata/fakeschema_confirm_delete.html" %}
+          </td>
+        </tr>
+        </tbody>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>There is no schemas :(</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,145 @@
+body {
+    background-color: #777;
+}
+
+.nomar-right {
+    margin-right: 0;
+}
+
+.header {
+    background-color: #555;
+    border-radius: 0 0 8px 8px;
+    margin: 0 15px 20px;
+    padding: 10px 20px;
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    color: #f5f5f5;
+}
+
+.logout {
+    display: flex;
+}
+
+.logout > div > a {
+    color: #f5f5f5;
+}
+
+.logout > div:first-child {
+    margin-right: 10px;
+}
+
+.logout > div:last-child {
+    border-left: 1px solid #333;
+    padding-left: 10px;
+}
+
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}
+
+
+.container-fluid {
+    padding: 0 15px;
+}
+
+.content_detail {
+    width: 100%;
+    padding: 0 30px;
+}
+
+.content_wrapper {
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    min-height: 80vh;
+}
+
+.login_container {
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 20px 20px 30px -18px rgba(0, 0, 0, 0.65);
+    margin: auto;
+    max-width: 270px;
+
+}
+
+
+.driver_list {
+    list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+}
+
+.driver_item {
+    padding: 10px;
+}
+
+
+.confirm_delete {
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    box-shadow: 20px 20px 30px -18px rgba(0, 0, 0, 0.65);
+}
+
+.link_color {
+    color: #000;
+
+}
+
+.link_color:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.link_color_white {
+    color: #ffffff;
+}
+
+.link_color_white:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.car_list_features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.driver_search {
+    margin-bottom: 20px;
+}
+
+.settings_btn {
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.window-header {
+    background-color: #343A40 !important;
+    text-decoration-color: whitesmoke;
+}
+
+.window-title {
+    color: #ffffff;
+    margin: auto;
+}
+
+.window-text {
+    margin: auto;
+}

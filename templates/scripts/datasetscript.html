@@ -1,0 +1,31 @@
+<script>
+    $(document).ready(function () {
+        $(document).on('submit', '#upload_form', function (e) {
+            e.preventDefault();
+            var newRow = `<tr>
+      <th scope="row">${$('#table tbody tr').length + 1}</th>
+      <td>${new Date().toLocaleString()}</td>
+      <td><span class="badge badge-danger">Proccesing</span></td>
+      <td></td>
+    </tr>`;
+            $('#table tbody').prepend(newRow);
+
+            $.ajax({
+                type: "POST",
+                url: "{% url "fakedata:schema-detail" pk=fakeschema.pk %}",
+                data: {
+                    rows: $('#id_rows').val(),
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    dataType: "json",
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#table tbody tr:first-child td:nth-child(3)').html(`<span class="badge badge-success">Success</span>`);
+                        $('#table tbody tr:first-child td:nth-child(4)').html(`<a href="${data.link}" class="btn btn-link">Download</a>`);
+
+                    }, 1000);
+                },
+            });
+        });
+    });
+</script>

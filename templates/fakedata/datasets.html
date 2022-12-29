@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load crispy_forms_filters %} {% block content %}
+
+  <h1>{{ fakeschema.title }} Columns
+    <th><a href="{% url 'fakedata:schema-list' %}" class="btn btn-danger link-to-page">Back</a>
+      {% if fakeschema.author == request.user %}
+        <a href="{% url 'fakedata:schema-edit' pk=fakeschema.pk %}" class="btn btn-success link-to-page">edit</a>
+      {% endif %} </th>
+  </h1>
+
+
+  {% if column %}
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Column name</th>
+        <th scope="col">Data type</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for column in column %}
+        <tr>
+          <th>{{ column.column_name }}</th>
+          <td>{{ column.data_type }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="lead">No columns</p>
+  {% endif %}
+
+
+  <form method="post" id="upload_form">
+    {% csrf_token %}
+
+    {{ form.rows|as_crispy_field }}
+
+    <button type="submit" class="btn btn-success" id="click-me">Generate new dataset</button>
+  </form>
+  <hr/>
+  <h3>{{ fakeschema.title }} Datasets</h3>
+  {% if fakeschema.schemadatasets.count == 0 %}
+    <p>No datasets yet.</p>
+  {% else %}
+    <div id="datasets">
+      {% include 'fakedata/table.html' %}
+    </div>
+  {% endif %}
+  {% include "scripts/datasetscript.html" %}
+{% endblock %}

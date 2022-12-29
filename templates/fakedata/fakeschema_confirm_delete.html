@@ -1,0 +1,25 @@
+<div class="modal fade" id="delete{{ fakeschema.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header window-header">
+        <h5 class="modal-title window-title" id="exampleModalLabel">U are win 10000$ click <a
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">here</a></h5>
+      </div>
+      <div class="modal-body">
+        <div class="confirm_delete">
+          <h4 class="window-text">Delete <strong>{{ fakeschema.title }}</strong>?</h4>
+          <h5 class="window-text">In this schema {{ fakeschema.schema_ds.all.count }} dataset!</h5>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <form action="{% url 'fakedata:schema-delete' pk=fakeschema.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Yes, delete</button>
+          <button type="button" class="btn btn-success" data-mdb-dismiss="modal">cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
