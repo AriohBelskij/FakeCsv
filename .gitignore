@@ -371,4 +371,4 @@ fabric.properties
 poetry.toml
 
 .idea/
-# End of https://www.toptal.com/developers/gitignore/api/pycharm,python,django
+# End of https://www.toptal.com/developers/gitignore/pycharm,python,django
