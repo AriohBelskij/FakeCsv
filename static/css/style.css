@@ -45,7 +45,6 @@ body {
     margin: 0 2px 0 2px;
 }
 
-
 .container-fluid {
     padding: 0 15px;
 }
@@ -74,18 +73,6 @@ body {
 
 }
 
-
-.driver_list {
-    list-style: none;
-    margin: 0 0 40px;
-    padding: 0;
-}
-
-.driver_item {
-    padding: 10px;
-}
-
-
 .confirm_delete {
     margin: 0 auto;
     max-width: 400px;
@@ -112,22 +99,6 @@ body {
 .link_color_white:hover {
     text-decoration: none;
     color: #ffffff;
-}
-
-.car_list_features {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    align-items: center;
-}
-
-.driver_search {
-    margin-bottom: 20px;
-}
-
-.settings_btn {
-    font-size: 16px;
-    text-transform: capitalize;
 }
 
 .window-header {
