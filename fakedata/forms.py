@@ -41,7 +41,11 @@ class ColumnInline(InlineFormSetFactory):
 
 
 class DataSetForm(forms.ModelForm):
-    rows = forms.IntegerField(label='', widget=forms.NumberInput(attrs={'placeholder': 'Number of rows'}))
+    rows = forms.IntegerField(
+        label="",
+        widget=forms.NumberInput(attrs={"placeholder": "Number of rows"}),
+    )
+
     class Meta:
         model = DataSet
         fields = ("rows",)
